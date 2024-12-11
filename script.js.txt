@@ -1,0 +1,55 @@
+let money = 100;
+let energy = 100;
+let psychology = 100;
+
+function updateStats() {
+  document.getElementById("money").innerText = `$${money}`;
+  document.getElementById("energy").innerText = `${energy}%`;
+  document.getElementById("psychology").innerText = `${psychology}%`;
+}
+
+function work() {
+  if (energy >= 10) {
+    money += 20;
+    energy -= 10;
+    psychology -= 5;
+    alert("Ты заработал $20, но устал.");
+  } else {
+    alert("У тебя нет энергии для работы!");
+  }
+  updateStats();
+}
+
+function study() {
+  if (energy >= 15) {
+    energy -= 15;
+    psychology -= 10;
+    alert("Ты изучил основы трейдинга!");
+  } else {
+    alert("Слишком устал, чтобы учиться.");
+  }
+  updateStats();
+}
+
+function trade() {
+  if (psychology < 20) {
+    alert("Ты в тильте и потерял всё! Начни заново.");
+    money = 100;
+    energy = 100;
+    psychology = 100;
+  } else {
+    const result = Math.random() > 0.5 ? "прибыль" : "убыток";
+    if (result === "прибыль") {
+      money += 50;
+      alert("Твоя сделка принесла $50!");
+    } else {
+      money -= 50;
+      alert("Ты потерял $50 на рынке.");
+    }
+    psychology -= 15;
+  }
+  updateStats();
+}
+
+// Инициализация
+updateStats();

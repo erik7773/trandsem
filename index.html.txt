@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Путь трейдера</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div id="game">
+    <h1>Путь трейдера</h1>
+    <p>Ты начинаешь с $100 и мечтой стать успешным трейдером.</p>
+    <div id="stats">
+      <p>Деньги: <span id="money">$100</span></p>
+      <p>Энергия: <span id="energy">100%</span></p>
+      <p>Психология: <span id="psychology">100%</span></p>
+    </div>
+    <div id="actions">
+      <button onclick="work()">Работать</button>
+      <button onclick="study()">Учиться</button>
+      <button onclick="trade()">Торговать</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
